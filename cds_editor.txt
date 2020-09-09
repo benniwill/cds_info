@@ -1,0 +1,41 @@
+# 09.09.2020: Anfang der Neuerstellung mit allen bekannten Infos.
+# ~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~
+Informationen für den Toolbox Editor des CDS
+
+Mit dem Toolbox Editor des CDS können Datensätze, die beim EZMWF vorrätig sind, direkt auf Kosten des EZMWFs analysiert und visualisiert werden.
+Der CDS stellt dabei eine eigene Dokumentation, die unter https://cds.climate.copernicus.eu/toolbox/doc/index.html zu finden. Dabei braucht man einen Account, um die Funktionen
+nutzen zu können. Dieser ist kostenlos.
+
+Im Editor wird eine Python-Umgebung verwendet. Es ist notwendig das Python Package des CDS (import cdstoolbox as ct) zu importieren. Ohne ist das Retrieval der Daten nicht möglich.
+Andere Pakete, wie Cartopy, funktionieren nicht und auch andere Daten als verfügbar sind zur Zeit nicht nutzbar. Dies kann sich in Zukunft ändern, hängt aber vom 
+Wohlwollen des CDS ab. Somit muss man die Syntax des CDS verwenden. Dazu gehört auch, dass man im Editor eigentlich nur Funktionen (Applications) programmiert. Diese haben mindestens
+einen Input und einen Output. Der Input ist dabei der gewünschte Datensatz. Der Output kann dabei ein Bild oder der Downloadlink für den Datensatz sein.
+
+Beispiel:
+
+import cdstoolbox as ct
+@ct.application(title='Download data')
+@ct.output.download()
+def download_application():
+    data = ct.catalogue.retrieve(
+        'reanalysis-era5-single-levels',
+        {
+            'product_type': 'reanalysis',
+            'variable': 'total_precipitation',
+            'year': '2019',
+            'month': '05',
+            'day': '14',
+            'time': '12:00',
+            'area': [
+                15, -93, -70,
+                -27,
+            ],
+        }
+    )
+    return data
+    
+    Im Beispiel wird für den ERA5-Datensatz, der in stündlichen Werten im Bodenniveau vorliegt, die Totale Precipitation im Bereich mit den Eckpunkten N15°W93° und S70°W27°
+    für den 14.05.2019 um 12 UTC ein Downloadlink generiert und der Datensatz wäre im netCDF4-Format nutzbar. Ohne die 'area' Einschränkung wäre zudem der Niederschlag 
+    für die gesamte Welt verfügbar. Die Namen der Variablen können auf der Seite des Datensatzes, 
+    Verzeichnis aller Datensätze: https://cds.climate.copernicus.eu/cdsapp#!/search?type=dataset ,
+    unter dem Reiter "Download data" eingesehen werden. Dort kann man entscheiden, was man für Daten haben möchte
