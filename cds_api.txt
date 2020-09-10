@@ -16,3 +16,28 @@ muss das File dort liegen, wo die Skripte ausgeführt werden! Die oben genannte 
 die Installationsanleitung unter 
 Windows: https://confluence.ecmwf.int/display/CKB/How+to+install+and+use+CDS+API+on+Windows 
 macOS: https://confluence.ecmwf.int/display/CKB/How+to+install+and+use+CDS+API+on+macOS
+Wichtig ist in allen Fällen, dass das cdsapi-Paket installiert wird.
+
+Nutzung:
+Wenn man ein Skript laufen lässt, muss das cdsapi-Paket installiert und das .cdsapirc-File vorhanden sein, da man sonst nicht eingeloggt wird und somit kein Zugriff erfolgen kann.
+Falls ein Skript, aus welchen Gründen auch immer, abgebrochen wird, startet es sich nicht neu, sondern muss per Hand neu gestartet werden. Man erhält bei der Ausführung zudem in 
+der Konsole Hinweise in welchem Status sich der Request befindet und wo es unter Umständen zu Problemen gekommen ist. Nachfolgend soll ein Beispiel für den Download der 2m 
+Temperatur für den 14.11.2019 um 12 UTC gegeben werden. Weitere Skripte befinden sich im Ordner Scripts.
+
+Beispiel:
+
+import cdsapi
+c = cdsapi.Client()
+c.retrieve(
+    'reanalysis-era5-single-levels',
+    {
+        'product_type': 'reanalysis',
+        'format': 'netcdf',
+        'variable': '2m_temperature',
+        'year': '2019',
+        'month': '11',
+        'day': '14',
+        'time': '12:00',
+    },
+    'download.nc')
+Mit dem String "download.nc" wird der Name des Files festgelegt. Es empfiehlt sich dringend diesen anzupassen zu z.B. "era5_t2m_14112019_12z.nc".
