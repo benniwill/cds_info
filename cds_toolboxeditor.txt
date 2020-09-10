@@ -118,3 +118,5 @@ def trend_app(region):
 In diesem Beispiel werden für die Region, die im Dropdown-Menü gewählt wird, der Near Surface Air Temperature Trend sowie die Standardabweichung des Trends auf Grundlage
 von ERA5 Daten ausgerechnet und dargestellt. Man sieht im Retrieval des Datensatzes, dass das Grid auf 3° x 3° gesetzt wurde. Ohne diese Option ist es ein 0.25° x 0.25° Grid.
 Trotz der vielfältigen Möglichkeiten muss hier eine neue Syntax angelernt werden, da Plotting-Pakete wie cartopy hier nicht funktionieren. 
+Unter https://cds.climate.copernicus.eu/cdsapp#!/yourrequests oder dem Reiter "Your request" findet man alle Runs, die man durchgeführt hat und kann sehen, ob diese
+Erfolgreich waren oder nicht und wie lange sie gedauert haben. 
