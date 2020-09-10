@@ -1,4 +1,5 @@
 Da die Datenmenge für alle Datenpunkte, also alle Jahre, alle Monate, alle Tage und alle Uhrzeiten zu groß für den CDS ist, Fehler:
 Request too large: 374.976 items requested, the current limit is 120.000. Please reduce your selection., befinden hier sich 2 Skripte für alle Monate, alle Tage
 und alle Uhrzeiten für das Jahr 2019 und das Jahr 1990. Falls man ein anderes Jahr wünscht, muss man dies einfach nur unter (bspw. für 2019) "year" : "2019" tun. Auch sollte man
-den Dateinamen von "download.nc" zu was sinnvollerem umändern. Dabei muss ".nc" am Ende stehen!
+den Dateinamen von "download.nc" zu was sinnvollerem umändern. Dabei muss ".nc" am Ende stehen! Neben der 2m Temperature befinden sich hier auch der Mean Sealevel Pressure (mslp),
+der totale Niederschlag (topre), der 2m Taupunkt (d2m) sowie die 10m u und v Windkomponente (10muw & 10mvw).
