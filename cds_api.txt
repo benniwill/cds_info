@@ -41,3 +41,4 @@ c.retrieve(
     },
     'download.nc')
 Mit dem String "download.nc" wird der Name des Files festgelegt. Es empfiehlt sich dringend diesen anzupassen zu z.B. "era5_t2m_14112019_12z.nc".
+
