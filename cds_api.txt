@@ -21,8 +21,10 @@ Wichtig ist in allen Fällen, dass das cdsapi-Paket installiert wird.
 Nutzung:
 Wenn man ein Skript laufen lässt, muss das cdsapi-Paket installiert und das .cdsapirc-File vorhanden sein, da man sonst nicht eingeloggt wird und somit kein 
 Zugriff erfolgen kann. Falls ein Skript, aus welchen Gründen auch immer, abgebrochen wird, startet es sich nicht neu, sondern muss per Hand neu gestartet werden. Man erhält
-bei der Ausführung zudem in der Konsole Hinweise in welchem Status sich der Request befindet und wo es unter Umständen zu Problemen gekommen ist. Nachfolgend soll 
-ein Beispiel für den Download der 2m Temperatur für den 14.11.2019 um 12 UTC gegeben werden. Weitere Skripte befinden sich im Ordner Scripts.
+bei der Ausführung zudem in der Konsole Hinweise in welchem Status sich der Request befindet und wo es unter Umständen zu Problemen gekommen ist. Wichtig zu beachten ist,
+dass hier auf Kosten des EZMWF gearbeitet wird. Somit kann es sein, dass große Datensätze lange Zeit (Beispielsweise waren es 30min für 19GB) in der Queue gehalten werden. 
+Entsprechend dauert auch der Download, falls man nicht auf einem sehr guten Rechner/System arbeitet. Nachfolgend soll ein Beispiel für den Download der 2m Temperatur 
+für den 14.11.2019 um 12 UTC gegeben werden. Weitere Skripte befinden sich im Ordner Scripts.
 
 Beispiel:
 
